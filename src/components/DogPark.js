@@ -11,10 +11,11 @@ const DogPark = () => {
       .get("http://localhost:3000/spots/")
       .then((value) => setDogParkLIst([...value.data]));
   }, []);
+  const sortedSpotList=spotlist.sort((a,b)=>{return b.price-a.price})
   return (
     <div className="flex flex-wrap gap-4 items-center justify-center m-10">
       {
-        spotlist&&spotlist.map((values,index)=>{
+        sortedSpotList&&sortedSpotList.map((values,index)=>{
           return(
             <div key={index}>
             <Link to={`/spots/${values.id}`}>
