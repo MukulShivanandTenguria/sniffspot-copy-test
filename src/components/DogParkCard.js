@@ -1,9 +1,6 @@
 import React from "react";
 import {
-  faRulerCombined,
-  faRulerHorizontal,
   faStar,
-  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,7 +8,8 @@ import { placeholderThumbnailSrc } from "../helper/constants";
 
 const DogParkCard = (props) => {
   
-  const { id, title, description, price, created_at, updated_at, imgURL } = props.data;
+  const {title, description, price, imgURL } = props.data;
+  // const { id, title, description, price, created_at, updated_at, imgURL } = props.data;
 
   return (
     <div className="rounded overflow-hidden mb-5">
