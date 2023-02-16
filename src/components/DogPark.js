@@ -1,34 +1,43 @@
 import React,{useEffect,useState} from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { spotlist } from '../data'
 import DogParkCard from './DogParkCard'
 import axios from "axios";
+import { baseUrl } from '../helper/constants';
+import { getSortedList } from '../helper/utils';
 
 const DogPark = () => {
-  const [dogparklist, setDogParkLIst] = useState([]);
+
+  const [dogparklist, setDogParkLIst] = useState(spotlist);
+
   useEffect(() => {
     axios
-      .get("http://localhost:3000/spots/")
+      .get(baseUrl + "/spots/")
       .then((value) => setDogParkLIst([...value.data]));
   }, []);
-  const sortedSpotList=spotlist.sort((a,b)=>{return b.price-a.price})
+  
+  const sortedSpotList= getSortedList(dogparklist)
+
   return (
-    <div className="flex flex-wrap gap-4 items-center justify-center m-10">
-      {
-        sortedSpotList&&sortedSpotList.map((values,index)=>{
-          return(
-            <div key={index}>
-            <Link to={`/spots/${values.id}`}>
-            <DogParkCard
-            value={values}
-            />
-            </Link>
-            </div>
-          )
-        })
-      }
+    <div className='container mx-auto'>
+      <h2 className="mt-5 font-bold text-3xl mb-6">Popular private dog parks near Seattle, Washington</h2>  
+      <div className="grid grid-cols-3 gap-4">
+        {
+          sortedSpotList && sortedSpotList.map((item)=>{
+            return(
+              <div className='card-item' key={`card_idx_${item.id}`}>
+                <Link to={`/spots/${item.id}`}>
+                  <DogParkCard
+                    data={item}
+                  />
+                </Link>
+              </div>
+            )
+          })
+        }
+      </div>
     </div>
   )
 }
 
-export default DogPark
+export default DogPark;

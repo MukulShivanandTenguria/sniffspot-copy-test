@@ -11,7 +11,7 @@ export const spotlist=[
       "id": 3,
       "title": "Beautiful beach house",
       "description": "Spacious 3-bedroom house with ocean views",
-      "price": "200.0",
+      "price": "300.0",
       "created_at": "2023-02-15T10:46:20.644Z",
       "updated_at": "2023-02-15T10:46:20.644Z"
   },
