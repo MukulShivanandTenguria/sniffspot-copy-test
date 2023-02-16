@@ -8,9 +8,9 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      <Route path="/spots" >
+      <Route path="/" >
         <Route index element={<DogPark/>}/>
-        <Route path=":id" element={<ParkDetailPage/>}/>
+        <Route path="spots/:id" element={<ParkDetailPage/>}/>
         {/* <Route path=":id" element={<ParkDetailPage/>}> */}
       </Route>
     </Routes>

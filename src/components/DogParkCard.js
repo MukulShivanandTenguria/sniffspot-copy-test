@@ -1,11 +1,9 @@
 import React from "react";
-import { spotlist } from "../data";
 import {
   faRulerCombined,
   faRulerHorizontal,
   faStar,
   faLocationDot,
-  faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const DogParkCard = (props) => {
@@ -25,11 +23,11 @@ const DogParkCard = (props) => {
       <div className="flex justify-between">
         <div className="px-2">
           <span className="inline-block bg-gray-100 font-serif rounded-full px-3 py-1 text-sm  text-gray-900 mr-2 ">
-            <FontAwesomeIcon icon={faRulerHorizontal} />
+            <FontAwesomeIcon color="#9c9c9c" icon={faRulerHorizontal} />
             Fully Fenced
           </span>
-          <span className="inline-block bg-gray-100 font-serif rounded-full px-3 py-1 text-sm  text-gray-900 mr-2 ">
-            <FontAwesomeIcon icon={faRulerCombined} />
+          <span className="inline-block bg-gray-100 font-serif rounded-full px-3 py-1 text-sm   text-gray-900 mr-2 ">
+            <FontAwesomeIcon  color="#9c9c9c" icon={faRulerCombined} />
             &#60; 1 acre
           </span>
         </div>
@@ -42,7 +40,7 @@ const DogParkCard = (props) => {
       <div className="flex justify-between ">
         <div className="px-2 py-1">
           <span className="inline-block font-serif bg-gray-100 rounded-full px-3 py-1 text-sm  text-gray-900 mr-2 mb-2">
-            &#36;10.00 dog/hour
+            &#36;{price} dog/hour
           </span>
         </div>
         <div className="px-3 py-1">
