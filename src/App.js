@@ -6,7 +6,7 @@ import ParkDetailPage from "./components/ParkDetailPage";
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL || ''}>
     <Routes>
       <Route path="/" >
         <Route index element={<DogPark/>}/>
