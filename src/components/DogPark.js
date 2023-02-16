@@ -16,12 +16,13 @@ const DogPark = () => {
       {
         spotlist&&spotlist.map((values,index)=>{
           return(
+            <div key={index}>
             <Link to={`/spots/${values.id}`}>
             <DogParkCard
-            indexvalue={index}
             value={values}
             />
             </Link>
+            </div>
           )
         })
       }

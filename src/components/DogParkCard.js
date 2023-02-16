@@ -8,7 +8,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const DogParkCard = (props) => {
   const { id, title, description, price, created_at, updated_at } = props.value;
-  console.log(id);
   return (
     <div className="w-96 rounded overflow-hidden shadow-lg">
       <img
