@@ -6,12 +6,11 @@ import {
   faRulerHorizontal,
   faStar,
   faLocationDot,
-  faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ParkDetailPage = () => {
   const { id } = useParams();
-  const carddetail = spotlist[id];
+  const carddetail = spotlist.filter((value)=>value.id.toString()===id);
   console.log(carddetail);
   return (
     <div className="flex justify-center m-10 ">
@@ -22,9 +21,9 @@ const ParkDetailPage = () => {
           alt="Sunset in the mountains"
         />
         <div className="px-2 py-2">
-          <div className=" text-sm mb-2 font-sans">{carddetail.title}</div>
+          <div className=" text-sm mb-2 font-sans">{carddetail[0].title}</div>
           <p className="text-gray-700 text-sm font-serif">
-            {carddetail.description}
+            {carddetail[0].description}
           </p>
         </div>
         <div className="flex justify-between">
